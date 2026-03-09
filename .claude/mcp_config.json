@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "env": {
+        "ALLOWED_PATHS": "./outputs,./logs,./dev/data"
+      }
+    },
+    "webhook": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "env": {
+        "WEBHOOK_URL": "${WEBHOOK_URL}"
+      }
+    },
+    "database": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite"],
+      "env": {
+        "DB_PATH": "./production/shipments.db"
+      }
+    }
+  }
+}
